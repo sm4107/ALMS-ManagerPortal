@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sprint2ALMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TRAttendanceDetails">
+    <Key>
+      <PropertyRef Name="AttendanceID" />
+    </Key>
+    <Property Name="AttendanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectID" Type="int" />
+    <Property Name="EmployeeID" Type="bigint" />
+    <Property Name="AttedanceDate" Type="date" Nullable="false" />
+    <Property Name="InTime" Type="time" Precision="0" Nullable="false" />
+    <Property Name="OutTime" Type="time" Precision="0" Nullable="false" />
+    <Property Name="AttendanceStatus" Type="varchar" MaxLength="10" />
+    <Property Name="StatusUpdateDate" Type="date" />
+    <Property Name="StatusUpdatedBy" Type="bigint" />
+  </EntityType>
+  <Function Name="GetAttendanceRecords" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="start" Type="datetime" Mode="In" />
+    <Parameter Name="end" Type="datetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="Sprint2ALMSModelStoreContainer">
+    <EntitySet Name="TRAttendanceDetails" EntityType="Self.TRAttendanceDetails" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

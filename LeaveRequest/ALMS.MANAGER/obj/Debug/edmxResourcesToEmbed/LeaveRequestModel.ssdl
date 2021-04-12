@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sprint2ALMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TRLeaveRequestDetails">
+    <Key>
+      <PropertyRef Name="LeaveRequestID" />
+    </Key>
+    <Property Name="LeaveRequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="bigint" />
+    <Property Name="LeaveDescription" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LeavesRemaining" Type="int" Nullable="false" />
+    <Property Name="LeaveRequestFrom" Type="date" Nullable="false" />
+    <Property Name="LeaveRequestTo" Type="date" Nullable="false" />
+    <Property Name="LeaveStatus" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LeaveRequestCreatedDate" Type="date" />
+    <Property Name="LeaveStatusUpdateDate" Type="date" />
+    <Property Name="LeaveStatusUpdatedBy" Type="bigint" />
+  </EntityType>
+  <EntityContainer Name="Sprint2ALMSModelStoreContainer">
+    <EntitySet Name="TRLeaveRequestDetails" EntityType="Self.TRLeaveRequestDetails" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

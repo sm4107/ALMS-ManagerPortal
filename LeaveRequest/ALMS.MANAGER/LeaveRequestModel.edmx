@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Sprint2ALMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TRLeaveRequestDetails">
+          <Key>
+            <PropertyRef Name="LeaveRequestID" />
+          </Key>
+          <Property Name="LeaveRequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="bigint" />
+          <Property Name="LeaveDescription" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LeavesRemaining" Type="int" Nullable="false" />
+          <Property Name="LeaveRequestFrom" Type="date" Nullable="false" />
+          <Property Name="LeaveRequestTo" Type="date" Nullable="false" />
+          <Property Name="LeaveStatus" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="LeaveRequestCreatedDate" Type="date" />
+          <Property Name="LeaveStatusUpdateDate" Type="date" />
+          <Property Name="LeaveStatusUpdatedBy" Type="bigint" />
+        </EntityType>
+        <EntityContainer Name="Sprint2ALMSModelStoreContainer">
+          <EntitySet Name="TRLeaveRequestDetails" EntityType="Self.TRLeaveRequestDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Sprint2ALMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TRLeaveRequestDetail">
+          <Key>
+            <PropertyRef Name="LeaveRequestID" />
+          </Key>
+          <Property Name="LeaveRequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int64" />
+          <Property Name="LeaveDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LeavesRemaining" Type="Int32" Nullable="false" />
+          <Property Name="LeaveRequestFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LeaveRequestTo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LeaveStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LeaveRequestCreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="LeaveStatusUpdateDate" Type="DateTime" Precision="0" />
+          <Property Name="LeaveStatusUpdatedBy" Type="Int64" />
+        </EntityType>
+        <EntityContainer Name="Sprint2ALMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TRLeaveRequestDetails" EntityType="Self.TRLeaveRequestDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Sprint2ALMSModelStoreContainer" CdmEntityContainer="Sprint2ALMSEntities">
+          <EntitySetMapping Name="TRLeaveRequestDetails">
+            <EntityTypeMapping TypeName="Sprint2ALMSModel.TRLeaveRequestDetail">
+              <MappingFragment StoreEntitySet="TRLeaveRequestDetails">
+                <ScalarProperty Name="LeaveRequestID" ColumnName="LeaveRequestID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="LeaveDescription" ColumnName="LeaveDescription" />
+                <ScalarProperty Name="LeavesRemaining" ColumnName="LeavesRemaining" />
+                <ScalarProperty Name="LeaveRequestFrom" ColumnName="LeaveRequestFrom" />
+                <ScalarProperty Name="LeaveRequestTo" ColumnName="LeaveRequestTo" />
+                <ScalarProperty Name="LeaveStatus" ColumnName="LeaveStatus" />
+                <ScalarProperty Name="LeaveRequestCreatedDate" ColumnName="LeaveRequestCreatedDate" />
+                <ScalarProperty Name="LeaveStatusUpdateDate" ColumnName="LeaveStatusUpdateDate" />
+                <ScalarProperty Name="LeaveStatusUpdatedBy" ColumnName="LeaveStatusUpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

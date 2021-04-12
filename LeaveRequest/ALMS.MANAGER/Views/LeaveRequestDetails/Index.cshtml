@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ALMS.MANAGER.TRLeaveRequestDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+<center>
+    <h1>
+        Manager Portal
+    </h1>
+</center>
+<h2>Pending Leave Requests</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeavesRemaining)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveRequestFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveRequestTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveRequestCreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveStatusUpdateDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeaveStatusUpdatedBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeavesRemaining)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveRequestFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveRequestTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveRequestCreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveStatusUpdateDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LeaveStatusUpdatedBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LeaveRequestID })
+        </td>
+    </tr>
+}
+
+</table>

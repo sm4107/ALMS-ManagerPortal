@@ -1,0 +1,90 @@
+﻿@model ALMS.MANAGER.TRLeaveRequestDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TRLeaveRequestDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeavesRemaining)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeavesRemaining)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveRequestFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveRequestFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveRequestTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveRequestTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveRequestCreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveRequestCreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveStatusUpdateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveStatusUpdateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeaveStatusUpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveStatusUpdatedBy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LeaveRequestID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

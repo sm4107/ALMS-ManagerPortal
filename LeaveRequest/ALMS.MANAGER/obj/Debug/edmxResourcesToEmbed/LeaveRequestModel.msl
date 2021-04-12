@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Sprint2ALMSModelStoreContainer" CdmEntityContainer="Sprint2ALMSEntities">
+    <EntitySetMapping Name="TRLeaveRequestDetails">
+      <EntityTypeMapping TypeName="Sprint2ALMSModel.TRLeaveRequestDetail">
+        <MappingFragment StoreEntitySet="TRLeaveRequestDetails">
+          <ScalarProperty Name="LeaveRequestID" ColumnName="LeaveRequestID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="LeaveDescription" ColumnName="LeaveDescription" />
+          <ScalarProperty Name="LeavesRemaining" ColumnName="LeavesRemaining" />
+          <ScalarProperty Name="LeaveRequestFrom" ColumnName="LeaveRequestFrom" />
+          <ScalarProperty Name="LeaveRequestTo" ColumnName="LeaveRequestTo" />
+          <ScalarProperty Name="LeaveStatus" ColumnName="LeaveStatus" />
+          <ScalarProperty Name="LeaveRequestCreatedDate" ColumnName="LeaveRequestCreatedDate" />
+          <ScalarProperty Name="LeaveStatusUpdateDate" ColumnName="LeaveStatusUpdateDate" />
+          <ScalarProperty Name="LeaveStatusUpdatedBy" ColumnName="LeaveStatusUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

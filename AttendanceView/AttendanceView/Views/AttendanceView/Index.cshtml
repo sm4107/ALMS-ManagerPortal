@@ -1,0 +1,84 @@
+﻿@model IEnumerable<AttendanceView.TRAttendanceDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+<center>
+    <h1>
+        Manager Portal
+    </h1>
+    <h2>Attendance Records</h2>
+    <hr />
+
+
+
+    @using (Html.BeginForm("Index", "AttendanceView", FormMethod.Post))
+    {
+        <span>Start Date :</span>
+        <input type="date" name="start" />
+        <span>End Date :</span>
+        <input type="date" name="end" />
+        <input type="submit" value="Get Records Between Dates" />
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmployeeID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AttedanceDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OutTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AttendanceStatus)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StatusUpdateDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StatusUpdatedBy)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmployeeID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AttedanceDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OutTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AttendanceStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StatusUpdateDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StatusUpdatedBy)
+                    </td>
+                    
+                </tr>
+            }
+
+        </table>
+    }
+        </center>

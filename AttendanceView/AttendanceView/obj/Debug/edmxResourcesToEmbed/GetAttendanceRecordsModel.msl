@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Sprint2ALMSModelStoreContainer" CdmEntityContainer="Sprint2ALMSEntities">
+    <EntitySetMapping Name="TRAttendanceDetails">
+      <EntityTypeMapping TypeName="Sprint2ALMSModel.TRAttendanceDetail">
+        <MappingFragment StoreEntitySet="TRAttendanceDetails">
+          <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="AttedanceDate" ColumnName="AttedanceDate" />
+          <ScalarProperty Name="InTime" ColumnName="InTime" />
+          <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+          <ScalarProperty Name="AttendanceStatus" ColumnName="AttendanceStatus" />
+          <ScalarProperty Name="StatusUpdateDate" ColumnName="StatusUpdateDate" />
+          <ScalarProperty Name="StatusUpdatedBy" ColumnName="StatusUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetAttendanceRecords" FunctionName="Sprint2ALMSModel.Store.GetAttendanceRecords">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Sprint2ALMSModel.GetAttendanceRecords_Result">
+          <ScalarProperty Name="AttendanceID" ColumnName="AttendanceID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="AttedanceDate" ColumnName="AttedanceDate" />
+          <ScalarProperty Name="InTime" ColumnName="InTime" />
+          <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+          <ScalarProperty Name="AttendanceStatus" ColumnName="AttendanceStatus" />
+          <ScalarProperty Name="StatusUpdateDate" ColumnName="StatusUpdateDate" />
+          <ScalarProperty Name="StatusUpdatedBy" ColumnName="StatusUpdatedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetFunctionAttendance" FunctionName="Sprint2ALMSModel.Store.GetAttendanceRecords" />
+  </EntityContainerMapping>
+</Mapping>

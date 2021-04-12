@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sprint2ALMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TRLeaveRequestDetail">
+    <Key>
+      <PropertyRef Name="LeaveRequestID" />
+    </Key>
+    <Property Name="LeaveRequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="Int64" />
+    <Property Name="LeaveDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LeavesRemaining" Type="Int32" Nullable="false" />
+    <Property Name="LeaveRequestFrom" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LeaveRequestTo" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LeaveStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LeaveRequestCreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="LeaveStatusUpdateDate" Type="DateTime" Precision="0" />
+    <Property Name="LeaveStatusUpdatedBy" Type="Int64" />
+  </EntityType>
+  <EntityContainer Name="Sprint2ALMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TRLeaveRequestDetails" EntityType="Self.TRLeaveRequestDetail" />
+  </EntityContainer>
+</Schema>

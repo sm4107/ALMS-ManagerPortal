@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sprint2ALMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TRAttendanceDetail">
+    <Key>
+      <PropertyRef Name="AttendanceID" />
+    </Key>
+    <Property Name="AttendanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int64" />
+    <Property Name="AttedanceDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="InTime" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="OutTime" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="AttendanceStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="StatusUpdateDate" Type="DateTime" Precision="0" />
+    <Property Name="StatusUpdatedBy" Type="Int64" />
+  </EntityType>
+  <EntityContainer Name="Sprint2ALMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TRAttendanceDetails" EntityType="Self.TRAttendanceDetail" />
+    <FunctionImport Name="GetAttendanceRecords" ReturnType="Collection(Sprint2ALMSModel.GetAttendanceRecords_Result)">
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetFunctionAttendance" EntitySet="TRAttendanceDetails" ReturnType="Collection(Sprint2ALMSModel.TRAttendanceDetail)">
+      <Parameter Name="start" Mode="In" Type="DateTime" />
+      <Parameter Name="end" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetAttendanceRecords_Result">
+    <Property Type="Int32" Name="AttendanceID" Nullable="false" />
+    <Property Type="Int32" Name="ProjectID" Nullable="true" />
+    <Property Type="Int64" Name="EmployeeID" Nullable="true" />
+    <Property Type="DateTime" Name="AttedanceDate" Nullable="false" />
+    <Property Type="Time" Name="InTime" Nullable="false" />
+    <Property Type="Time" Name="OutTime" Nullable="false" />
+    <Property Type="String" Name="AttendanceStatus" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="StatusUpdateDate" Nullable="true" />
+    <Property Type="Int64" Name="StatusUpdatedBy" Nullable="true" />
+  </ComplexType>
+</Schema>
